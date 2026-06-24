@@ -1,0 +1,33 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Sample Weather Data
+df = pd.DataFrame({
+    'Month': ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
+    'Temperature': [22, 24, 28, 32, 35],
+    'Rainfall': [10, 15, 20, 30, 40],
+    'Humidity': [65, 60, 58, 70, 75]
+})
+
+# Graph 1: Temperature Trend
+plt.figure(figsize=(8,5))
+plt.plot(df['Month'], df['Temperature'], marker='o')
+plt.title('Temperature Trend')
+plt.xlabel('Month')
+plt.ylabel('Temperature (°C)')
+plt.show()
+
+# Graph 2: Rainfall Analysis
+plt.figure(figsize=(8,5))
+plt.bar(df['Month'], df['Rainfall'])
+plt.title('Monthly Rainfall')
+plt.xlabel('Month')
+plt.ylabel('Rainfall (mm)')
+plt.show()
+
+# Graph 3: Humidity Distribution
+plt.figure(figsize=(6,6))
+plt.pie(df['Humidity'], labels=df['Month'], autopct='%1.1f%%')
+plt.title('Humidity Distribution')
+plt.show()
